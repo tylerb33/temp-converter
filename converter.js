@@ -16,6 +16,7 @@ function toCelsius () {
 }
 
 function toFahrenheit () {
+	console.log("hello")
 	let ogCels = document.getElementById("temp-input").value;
 	let nowFahren = Math.floor(((ogCels * 9) / 5) + 32);
 	outputArea.innerHTML = nowFahren;
@@ -26,6 +27,7 @@ function toFahrenheit () {
 			}else {
 				outputArea.innerHTML = `<div class="green">${nowFahren}</div>`
 			}
+
 }
 
 // Get a reference to the button element in the DOM
@@ -50,10 +52,10 @@ function determineConverter (clickEvent) {
 
 function clearTheField() {
 	document.getElementById("temp-input").value = "";
-	// document.getElementById("temp-output").innerHTML = "";
+	document.getElementById("temp-output").innerHTML = "";
 }
 
 
 // Assign a function to be executed when the button is clicked
-document.getElementById("converter").addEventListener("click", determineConverter)
 document.getElementById("clear-temp").addEventListener("click", clearTheField)
+document.getElementById("converter").addEventListener("click", determineConverter)
